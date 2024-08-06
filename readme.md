@@ -1,8 +1,5 @@
-Claro! Aqui está um exemplo de um README para o seu projeto de gerenciamento de viagem criado no evento NLW Journey da Rocketseat:
 
----
-
-# Gerenciamento de Viagem
+# Trip manager
 
 Este projeto foi desenvolvido durante o evento NLW Journey da Rocketseat. Trata-se de um sistema completo de gerenciamento de viagem, desenvolvido com ReactJS, Tailwind CSS, React Native e NodeJS.
 
