@@ -13,9 +13,8 @@ This project was developed during Rocketseat's NLW Journey event. It is a comple
 
 ## ✨ Features
 
-- **Trip Management**: Add, edit, and delete trips.
-- **Trip Visualization**: List and detail registered trips.
-- **User Authentication**: Login and registration system.
+- **Trip Management**: Add, edit, and remove trip planning items.
+- **Trip Planning Visualization**: List and detail the trip.
 - **Mobile Application**: Access functionalities through a mobile app.
 
 ## 🛠️ How to Run the Project
@@ -94,9 +93,8 @@ Este projeto foi desenvolvido durante o evento NLW Journey da Rocketseat. Trata-
 
 ## ✨ Funcionalidades
 
-- **Gerenciamento de Viagens**: Adicione, edite e remova viagens.
-- **Visualização de Viagens**: Listagem e detalhamento das viagens cadastradas.
-- **Autenticação de Usuários**: Sistema de login e registro.
+- **Gerenciamento de Viagens**: Adicione, edite e remova itens do planejamento da viagem.
+- **Visualização de planejamento da viagem**: Listagem e detalhamento da viagem.
 - **Aplicativo Móvel**: Acesso às funcionalidades através de um app mobile.
 
 ## 🛠️ Como Executar o Projeto
