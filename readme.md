@@ -32,11 +32,11 @@ Este projeto foi desenvolvido durante o evento NLW Journey da Rocketseat. Trata-
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/gerenciamento-viagem.git
+   git clone https://github.com/henriquesantosdev/trip-manager.git
    ```
 2. Navegue até o diretório do backend:
    ```bash
-   cd gerenciamento-viagem/backend
+   cd trip-manager/nodejs-backend
    ```
 3. Instale as dependências:
    ```bash
@@ -51,7 +51,7 @@ Este projeto foi desenvolvido durante o evento NLW Journey da Rocketseat. Trata-
 
 1. Navegue até o diretório do frontend:
    ```bash
-   cd ../frontend
+   cd ../react-frontend
    ```
 2. Instale as dependências:
    ```bash
@@ -59,14 +59,14 @@ Este projeto foi desenvolvido durante o evento NLW Journey da Rocketseat. Trata-
    ```
 3. Inicie a aplicação:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ### Mobile
 
 1. Navegue até o diretório do mobile:
    ```bash
-   cd ../mobile
+   cd ../react-native-frontend
    ```
 2. Instale as dependências:
    ```bash
