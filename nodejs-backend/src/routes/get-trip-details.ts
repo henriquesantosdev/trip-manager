@@ -1,13 +1,11 @@
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 import {  z } from "zod"
-import { dayjs } from "../lib/dayjs"
 import { prisma } from "../lib/prisma";
-import { ClientError } from "../erros/client-error";
 
-export const getLinks = async (app: FastifyInstance) => {
+export const getTripDetails = async (app: FastifyInstance) => {
 
-    app.withTypeProvider<ZodTypeProvider>().get('/trips/:tripId/links', {
+    app.withTypeProvider<ZodTypeProvider>().get('/trips/:tripId/details', {
         schema: {
             params: z.object({
                 tripId: z.string().uuid()
@@ -17,16 +15,16 @@ export const getLinks = async (app: FastifyInstance) => {
         const { tripId } = request.params
         
         const trip = await prisma.trip.findUnique({
+            select: {
+                id: true,
+                destination: true,
+                starts_at: true,
+                ends_at: true,
+                is_confirmed: true
+            },
             where: { id: tripId },
-            include: {
-                Links: true
-            }
         })
 
-        if (!trip) {
-            throw new ClientError("Trip not found")
-        }
-
-        return { links: trip.Links }
+        return { trip }
     })
 }

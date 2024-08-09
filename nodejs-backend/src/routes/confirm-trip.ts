@@ -6,6 +6,7 @@ import nodemailer from "nodemailer"
 import { date, z } from "zod"
 import { prisma } from "../lib/prisma";
 import { getMailClient } from "../lib/mail";
+import { env } from "../env";
 
 export const confirmTrip = async (app: FastifyInstance) => {
 
@@ -37,7 +38,7 @@ export const confirmTrip = async (app: FastifyInstance) => {
         }
 
         if (trip.is_confirmed) {
-            return reply.redirect(`http://localhost:3000/trips/${tripId}`)
+            return reply.redirect(`${ env.WEB_BASE_URL }/trips/${tripId}`)
         }
 
         await prisma.trip.update({
@@ -55,13 +56,12 @@ export const confirmTrip = async (app: FastifyInstance) => {
         const formatterStartDate = dayjs(trip.starts_at).format('LL')
         const formatterEndsDate = dayjs(trip.ends_at).format('LL')
 
-
         const mail = await getMailClient()
 
         await Promise.all(
             trip.participants.map(async (participant) => {
 
-                const confirmationLink = `http://localhost:3333/participants/${participant.id}/confirm`
+                const confirmationLink = `${ env.API_BASE_URL }/participants/${participant.id}/confirm`
 
                 const message = await mail.sendMail({
                     from: {
@@ -101,7 +101,7 @@ export const confirmTrip = async (app: FastifyInstance) => {
             })
         )
 
-        return reply.redirect(`http://localhost:3000/trips/${tripId}`)
+        return reply.redirect(`${ env.WEB_BASE_URL }/trips/${tripId}`)
     })
 
 }
